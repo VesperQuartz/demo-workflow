@@ -12,8 +12,14 @@ jobs:
       - run: echo "Hello, ${{ github.actor }}"
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: Use Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          cache: 'npm'
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install pnpm and dependencies
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: true
       - run: npm run lint
