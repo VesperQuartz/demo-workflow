@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "tsx index.ts",
+    "lint": "eslint",
     "test": ""
   },
   "keywords": [],
