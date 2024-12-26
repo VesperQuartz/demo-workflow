@@ -6,3 +6,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, ${{ github.actor }}"
+      - name: Check out repository code
+        uses: actions/checkout@v4
