@@ -4,6 +4,9 @@ on: [push]
 jobs:
   Lectus-Job:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ${{ matrix.node-version }}
     steps:
       - run: echo "Hello, ${{ github.actor }}"
       - name: Check out repository code
@@ -12,5 +15,4 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: 'npm'
-      - name: Run eslint
-        uses: npm run lint
+      - run: npm run lint
