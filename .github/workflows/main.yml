@@ -8,3 +8,5 @@ jobs:
       - run: echo "Hello, ${{ github.actor }}"
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
