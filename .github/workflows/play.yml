@@ -3,10 +3,12 @@ run-name: ${{ github.actor  }} is testing out github actions
 on: [push]
 jobs:
   Lectus-Job:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
+        os: [ubuntu-latest]
         node-version: [18.x, 20.x, 22.x]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - run: echo "Hello, ${{ github.actor }}"
